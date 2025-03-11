@@ -9,9 +9,9 @@ describe('RegistrationDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegistrationDetailsComponent, SuccessComponent ]
+      imports: [RegistrationDetailsComponent, SuccessComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

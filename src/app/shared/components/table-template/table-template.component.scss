@@ -1,4 +1,4 @@
-@import "/src/assets/styles/abstracts/mixins.scss";
+@use "/src/assets/styles/abstracts/mixins.scss" as *;
 
 .table {	
 	border: none;	

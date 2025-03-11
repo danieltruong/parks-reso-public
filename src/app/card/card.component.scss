@@ -1,30 +1,31 @@
-@import '/src/assets/themes/default.scss';
+@use '/src/assets/themes/default.scss';
+@use "@digitalspace/bcparks-bootstrap-theme/dist/scss/variables";
 
 .card {
   display: block;
   line-height: 1.42857143;
-  background-color: $bg-info;
+  background-color: default.$bg-info;
   border-radius: 5px;
   border: none;
   transition: box-shadow 0.25s;
   overflow: hidden;
 
   h2 {
-    color: $primary;
+    color: variables.$primary;
   }
 }
 
 .specialClosure {
   display: block;
   line-height: 1.42857143;
-  background-color: $bg-info;
+  background-color: default.$bg-info;
   border-radius: 5px;
   border: none;
   transition: box-shadow 0.25s;
   overflow: hidden;
 
   h2 {
-    color: $primary;
+    color: variables.$primary;
   }
 }
 
@@ -33,7 +34,7 @@
   width: 1rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  background-color: $success;
+  background-color: variables.$success;
   display: inline-block;
 }
 
@@ -42,7 +43,7 @@
   width: 1rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  background-color: $danger;
+  background-color: variables.$danger;
   display: inline-block;
 }
 
@@ -51,7 +52,7 @@
   width: 1rem;
   border-radius: 50%;
   margin-right: 0.5rem;
-  background-color: $warning;
+  background-color: variables.$warning;
   display: inline-block;
 }
 
@@ -93,7 +94,7 @@
   border-radius: 1.5rem;
   cursor: default;
   min-width: 224px;
-  color: $text-default;
+  color: default.$text-default;
   &:hover {
     background-color: transparent;
     cursor: not-allowed;
@@ -120,5 +121,5 @@
 }
 
 .text-override {
-  color: $text-default;
+  color: default.$text-default;
 }

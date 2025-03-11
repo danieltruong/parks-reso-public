@@ -9,10 +9,10 @@ describe('PageCountDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ CommonModule ],
-      declarations: [ PageCountDisplayComponent ]
+      imports: [PageCountDisplayComponent, CommonModule],
+      declarations: []
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

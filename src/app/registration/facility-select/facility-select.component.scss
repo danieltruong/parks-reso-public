@@ -1,4 +1,4 @@
-@import "/src/assets/themes/default.scss";
+@use "@digitalspace/bcparks-bootstrap-theme/dist/scss/variables";
 
 label {
     width: 100%;
@@ -51,14 +51,14 @@ input[type="radio"]:checked:after {
 }
 
 .card-header-selected {
-    background-color: $primary !important;
+    background-color: variables.$primary !important;
     color: white;
     text-align: left;
 }
 
 .card-header-enabled {
     background-color: white !important;
-    color: $primary;
+    color: variables.$primary;
     text-align: left;
 }
 

@@ -17,11 +17,17 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [HomeComponent, ImportantBookingInfoComponent, ParksListComponent, TipsComponent],
-    imports: [RouterTestingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', { enabled: false })],
-    providers: [ParkService, ApiService, ConfigService, SwUpdate, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-}).compileComponents();
+      declarations: [],
+      imports: [
+        RouterTestingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
+        HomeComponent,
+        ImportantBookingInfoComponent,
+        ParksListComponent,
+        TipsComponent
+      ],
+      providers: [ParkService, ApiService, ConfigService, SwUpdate, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    }).compileComponents();
   });
 
   beforeEach(() => {

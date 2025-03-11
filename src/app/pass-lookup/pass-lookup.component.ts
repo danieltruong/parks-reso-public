@@ -1,4 +1,4 @@
-import { formatDate } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pass } from '../models/pass';
@@ -11,7 +11,9 @@ import { PassLookupFormComponent } from './pass-lookup-form/pass-lookup-form.com
 @Component({
   selector: 'app-pass-lookup',
   templateUrl: './pass-lookup.component.html',
-  styleUrls: ['./pass-lookup.component.scss']
+  styleUrls: ['./pass-lookup.component.scss'],
+  imports: [CommonModule],
+  standalone: true
 })
 export class PassLookupComponent implements OnInit {
   @Input() pass: Pass;
@@ -102,7 +104,7 @@ export class PassLookupComponent implements OnInit {
   passSuccessfullyCancelled(): AlertObject {
     let passDetails = ``;
     if (this.cancelledPassData?.date && this.cancelledPassData?.type) {
-      passDetails = `for <strong>${ formatDate(this.cancelledPassData.date, 'mediumDate', 'en-CA')} - ${this.cancelledPassData.type}</strong> `;
+      passDetails = `for <strong>${formatDate(this.cancelledPassData.date, 'mediumDate', 'en-CA')} - ${this.cancelledPassData.type}</strong> `;
     }
     let alert = new AlertObject({
       type: 'info',

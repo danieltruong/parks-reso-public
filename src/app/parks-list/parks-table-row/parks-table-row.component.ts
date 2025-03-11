@@ -1,10 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TableRowComponent } from 'src/app/shared/components/table-template/table-row-component';
 
 @Component({
   selector: 'tr[app-parks-table-row]',
   templateUrl: './parks-table-row.component.html',
-  styleUrls: ['./parks-table-row.component.scss']
+  styleUrls: ['./parks-table-row.component.scss'],
+  imports: [CommonModule],
+  standalone: true
 })
 export class ParksTableRowComponent extends TableRowComponent {
 

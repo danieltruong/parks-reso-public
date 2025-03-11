@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { TableTemplateModule } from '../table-template/table-template.module';
 
 import { ListComponent } from './list.component';
+import { TableTemplateComponent } from '../table-template/table-template.component';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -9,8 +9,8 @@ describe('ListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ListComponent],
-      imports: [ TableTemplateModule ]
+      declarations: [],
+      imports: [TableTemplateComponent, ListComponent]
     })
       .compileComponents();
   }));

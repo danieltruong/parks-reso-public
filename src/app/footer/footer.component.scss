@@ -1,8 +1,9 @@
-@import "/src/assets/themes/default.scss";
+@use "/src/assets/themes/default.scss";
+@use "@digitalspace/bcparks-bootstrap-theme/dist/scss/variables";
 
 .app-footer {
-  background: $footer-bg;
-  color: $footer-color;
+  background: default.$footer-bg;
+  color: default.$footer-color;
 
   .container {
     padding-bottom: 0.5rem;
@@ -19,11 +20,11 @@
   }
 
   a {
-    color: $footer-color;
+    color: default.$footer-color;
 
     &:focus,
     &:hover {
-      color: $bcgold;
+      color: variables.$bcgold;
     }
   }
 

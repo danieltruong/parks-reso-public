@@ -2,25 +2,27 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ConfigService } from 'src/app/shared/services/config.service';
-import { RegistrationDetailsComponent } from '../registration-details/registration-details.component';
 
 import { SuccessComponent } from './success.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { MountSeymourComponent } from './facilityConfirmation/mountSeymour/mountSeymour.component';
+import { GaribaldiConfirmationComponent } from './facilityConfirmation/garibaldi/garibaldiConfirmation.component';
+import { JoffreLakesComponent } from './facilityConfirmation/joffreLakes/joffreLakes.component';
+import { RegistrationDetailsComponent } from '../registration-details/registration-details.component';
 
-describe('SuccessComponent', () => {
+fdescribe('SuccessComponent', () => {
   let component: SuccessComponent;
   let fixture: ComponentFixture<SuccessComponent>;
   let router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [SuccessComponent, RegistrationDetailsComponent],
-    imports: [RouterTestingModule],
-    providers: [ConfigService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-})
-    .compileComponents();
+      declarations: [],
+      imports: [SuccessComponent, GaribaldiConfirmationComponent, JoffreLakesComponent, MountSeymourComponent, RegistrationDetailsComponent],
+      providers: [ConfigService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    })
+      .compileComponents();
   });
 
   beforeEach(() => {

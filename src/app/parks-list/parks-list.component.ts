@@ -3,11 +3,15 @@ import { takeWhile } from 'rxjs/operators';
 import { ParkService } from '../services/park.service';
 import { IColumnObject } from '../shared/components/table-template/table-object';
 import { ParksTableRowComponent } from './parks-table-row/parks-table-row.component';
+import { CommonModule } from '@angular/common';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-parks-list',
   templateUrl: './parks-list.component.html',
-  styleUrls: ['./parks-list.component.scss']
+  styleUrls: ['./parks-list.component.scss'],
+  imports: [CommonModule, CardComponent],
+  standalone: true
 })
 export class ParksListComponent implements OnInit, OnDestroy {
   private alive = true;
@@ -41,11 +45,11 @@ export class ParksListComponent implements OnInit, OnDestroy {
     return 0;
   };
 
-  constructor(private changeDetectionRef: ChangeDetectorRef, private parkService: ParkService) {}
+  constructor(private changeDetectionRef: ChangeDetectorRef, private parkService: ParkService) {
+  }
 
   ngOnInit() {
     let tabIndex = 10;
-
     this.parkService
       .getListValue()
       .pipe(takeWhile(() => this.alive))
@@ -58,7 +62,7 @@ export class ParksListComponent implements OnInit, OnDestroy {
             let tempClosedList = [];
             let specialClosureList = [];
             res.forEach(park => {
-              if (park.specialClosure === true ) {
+              if (park.specialClosure === true) {
                 specialClosureList.push({ ...park, ...{ tabindex: tabIndex } });
               } else if (park.status === 'closed') {
                 tempClosedList.push({ ...park, ...{ tabindex: tabIndex } });

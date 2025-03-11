@@ -8,7 +8,7 @@ describe('ParksTableRowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParksTableRowComponent ]
+      imports: [ ParksTableRowComponent ]
     })
     .compileComponents();
   });

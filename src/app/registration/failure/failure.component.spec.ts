@@ -9,10 +9,10 @@ describe('FailureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FailureComponent ],
-      imports: [RouterTestingModule]
+      declarations: [],
+      imports: [RouterTestingModule, FailureComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

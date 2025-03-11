@@ -1,5 +1,6 @@
-@import "/src/assets/themes/default.scss";
-@import "/src/assets/base/base.scss";
+@use "src/assets/themes/default";
+@use "src/assets/base/base";
+@use "@digitalspace/bcparks-bootstrap-theme/dist/scss/variables";
 
 .env-banner {
     padding: 5px 10px;
@@ -33,15 +34,16 @@
 
 .sub-header {
     width: 100%;
-    background-color: $bg-header-secondary;
-    border-top: 2px solid $bcgold;
+    background-color: default.$bg-header-secondary;
+    border-top: 2px solid variables.$bcgold;
 }
 
 .app-header {
-    background: $header-bg;
-    color: $header-font-color;
-    height: $header-height;
+    background: default.$header-bg;
+    color: default.$header-font-color;
+    height: base.$header-height;
 }
+
 .showForIEorEdge {
     display: block;
 }
@@ -50,8 +52,8 @@
 .navbar-toggler {
     margin-right: 0.5rem;
     padding: 0.5rem 0.4rem;
-    border: 2px solid $bcgold;
-    color: $bcgold;
+    border: 2px solid variables.$bcgold;
+    color: variables.$bcgold;
     font-size: medium;
     font-weight: 600;
     outline: none; // override user agent stylesheet default
@@ -70,11 +72,11 @@
         margin-top: -0.25rem;
         margin-bottom: -0.25rem;
 
-        + span {
+        +span {
             display: none;
             margin-top: 1px;
             margin-left: 0.25rem;
-            font-size: $mn-font-size;
+            font-size: base.$mn-font-size;
             font-weight: 700;
             vertical-align: top;
         }
@@ -84,7 +86,7 @@
 @media (min-width: 420px) {
     .navbar-toggler {
         i {
-            + span {
+            +span {
                 display: inline-block;
             }
         }
@@ -94,7 +96,7 @@
 // NAVBAR
 .navbar {
     padding: 0;
-    background-color: $header-bg !important;
+    background-color: default.$header-bg !important;
     z-index: 1000;
 
     .navbar-nav {
@@ -105,10 +107,10 @@
             position: relative;
             z-index: 1001; // +1 to keep above dropdown menus
             padding: 0.875rem 1rem;
-            border-top: 1px solid $mn-border-color;
-            color: $bcgold;
+            border-top: 1px solid default.$mn-border-color;
+            color: variables.$bcgold;
             text-transform: uppercase;
-            font-size: $mn-font-size;
+            font-size: base.$mn-font-size;
             font-weight: 700;
             cursor: pointer;
 
@@ -126,7 +128,7 @@
         .dropdown {
             &.show {
                 .dropdown-toggle {
-                    color: $bcgold;
+                    color: variables.$bcgold;
                 }
             }
         }
@@ -140,8 +142,8 @@
 
             .dropdown-item {
                 padding: 0.5rem 1rem;
-                color: $mn-color;
-                font-size: $mn-dropdown-menu-size;
+                color: default.$mn-color;
+                font-size: base.$mn-dropdown-menu-size;
                 white-space: normal;
                 cursor: pointer;
 
@@ -162,7 +164,7 @@
                     background: transparent;
 
                     strong {
-                        color: $mn-hover-color;
+                        color: default.$mn-hover-color;
                     }
 
                     .dd-item-desc {
@@ -185,24 +187,28 @@
                 height: 4.2rem; // 60px to match the branding height
                 padding: 0.5rem 0.75rem !important;
                 border-top: none;
+
                 span {
                     margin-top: 0.9rem;
                     display: inline-block;
                 }
+
                 &:hover {
-                    border-bottom: 2px solid $bcgold;
+                    border-bottom: 2px solid variables.$bcgold;
                 }
             }
 
-            > li {
+            >li {
                 .dropdown-menu {
                     margin: 0;
                     padding: 0.5rem;
                     min-width: 16rem;
                     background-color: #002663;
+
                     &.dm-sm {
                         min-width: 12rem;
                     }
+
                     .dropdown-item {
                         padding: 0.5rem;
                     }
@@ -211,20 +217,23 @@
                 &.dropdown {
                     &.show {
                         .dropdown-toggle {
-                            color: $mn-color;
+                            color: default.$mn-color;
                         }
+
                         .dropdown-menu {
                             display: none;
                         }
                     }
 
                     &:hover {
-                        > a,
-                        > a:hover,
-                        > a:focus {
+
+                        >a,
+                        >a:hover,
+                        >a:focus {
                             background-color: #002663;
                             border: none;
                         }
+
                         .dropdown-menu {
                             display: block;
                         }
@@ -248,4 +257,3 @@
 .bc-parks-logo {
     height: 100%;
 }
-

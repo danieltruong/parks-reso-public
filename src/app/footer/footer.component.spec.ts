@@ -4,6 +4,7 @@ import { ConfigService } from '../shared/services/config.service';
 
 import { FooterComponent } from './footer.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -11,11 +12,25 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [FooterComponent],
-    imports: [],
-    providers: [ConfigService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-})
-    .compileComponents();
+      declarations: [],
+      imports: [FooterComponent],
+      providers: [
+        ConfigService,
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get: () => '',
+              },
+            },
+          },
+        }
+      ]
+    })
+      .compileComponents();
   });
 
   beforeEach(() => {

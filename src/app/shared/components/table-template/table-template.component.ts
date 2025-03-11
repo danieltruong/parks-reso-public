@@ -2,11 +2,18 @@ import { Component, Input, Output, EventEmitter, SimpleChanges, OnChanges, Injec
 
 import { TableObject } from './table-object';
 import { ITableMessage } from './table-row-component';
+import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PageCountDisplayComponent } from '../page-count-display/page-count-display.component';
+import { PageSizePickerComponent } from '../page-size-picker/page-size-picker.component';
+import { TableRowDirective } from './table-row.directive';
 
 @Component({
   selector: 'app-table-template',
   templateUrl: './table-template.component.html',
-  styleUrls: ['./table-template.component.scss']
+  styleUrls: ['./table-template.component.scss'],
+  imports: [PageCountDisplayComponent, PageSizePickerComponent, NgxPaginationModule, CommonModule, TableRowDirective],
+  standalone: true
 })
 export class TableTemplateComponent implements OnChanges {
   @Input() data: TableObject;
@@ -14,7 +21,7 @@ export class TableTemplateComponent implements OnChanges {
   @Input() messageIn: EventEmitter<ITableMessage> = new EventEmitter<ITableMessage>();
   @Output() messageOut: EventEmitter<ITableMessage> = new EventEmitter<ITableMessage>();
 
-  constructor(public injector: Injector) {}
+  constructor(public injector: Injector) { }
 
   ngOnChanges(changes: SimpleChanges) {
     // only run when property "data" changed

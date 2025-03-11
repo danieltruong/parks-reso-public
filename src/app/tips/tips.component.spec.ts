@@ -9,10 +9,10 @@ describe('TipsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TipsComponent, MockTipsComponent ],
+      imports: [TipsComponent, MockTipsComponent],
       schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -28,7 +28,8 @@ describe('TipsComponent', () => {
 
 @Component({
   selector: 'app-tips',
-  template: ''
+  template: '',
+  standalone: true
 })
 class MockTipsComponent {
 }

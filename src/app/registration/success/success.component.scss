@@ -1,4 +1,4 @@
-@import '/src/assets/themes/default.scss';
+@use '/src/assets/themes/default.scss';
 
 .left-col {
   border-right: 2px solid lightgray;
@@ -25,7 +25,7 @@
 }
 
 .qr-container {
-  background: $bg-default;
+  background: default.$bg-default;
   padding-top: 10%;
   padding-bottom: 10%;
 }

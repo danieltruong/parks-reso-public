@@ -19,20 +19,22 @@ export class ApiService {
   headers: HttpHeaders;
 
   constructor(
-    appRef: ApplicationRef,
+    private appRef: ApplicationRef,
     readonly updates: SwUpdate,
     private toastService: ToastService,
     private http: HttpClient,
     private loggerService: LoggerService,
     private configService: ConfigService
-  ) {
+  ) { }
+
+  init() {
     this.apiPath = this.configService.config['API_LOCATION'] + this.configService.config['API_PUBLIC_PATH'];
     this.env = this.configService.config['ENVIRONMENT'];
     this.headers = new HttpHeaders().set('X-App-Version', this.configService.config.hashVersion);
 
-    this.loggerService.info(`Update checking enabled? (${updates.isEnabled})`);
+    this.loggerService.info(`Update checking enabled? (${this.updates.isEnabled})`);
 
-    updates.versionUpdates.subscribe(evt => {
+    this.updates.versionUpdates.subscribe(evt => {
       switch (evt.type) {
         case 'VERSION_DETECTED':
           this.loggerService.info(`Downloading new app version: ${evt.version.hash}`);
@@ -55,14 +57,14 @@ export class ApiService {
       }
     });
 
-    const appIsStable$ = appRef.isStable.pipe(first(isStable => isStable === true));
+    const appIsStable$ = this.appRef.isStable.pipe(first(isStable => isStable === true));
     const everySixHours$ = interval(6 * 60 * 60 * 1000);
     const everySixHoursOnceAppIsStable$ = concat(appIsStable$, everySixHours$);
 
     everySixHoursOnceAppIsStable$.subscribe(async () => {
       this.loggerService.info("Checking for update")
       try {
-        const bUpdateFound = await updates.checkForUpdate();
+        const bUpdateFound = await this.updates.checkForUpdate();
         this.loggerService.info(`Update Found?:${bUpdateFound}`)
 
         if (bUpdateFound) {

@@ -15,8 +15,9 @@ describe('BreadcrumbComponent', () => {
   };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BreadcrumbComponent],
+      declarations: [],
       imports: [
+        BreadcrumbComponent,
         RouterTestingModule,
         RouterTestingModule.withRoutes([
           {

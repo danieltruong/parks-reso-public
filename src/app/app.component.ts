@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { IBreadcrumb } from './breadcrumb/breadcrumb.component';
 import { ToastService } from './services/toast.service';
 import { Constants } from './shared/utils/constants';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  imports: [HeaderComponent, FooterComponent, RouterOutlet]
 })
 export class AppComponent implements OnInit {
   public breadcrumbs: IBreadcrumb[];

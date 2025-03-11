@@ -4,12 +4,12 @@ import { By } from '@angular/platform-browser';
 import { ConfigService } from 'src/app/shared/services/config.service';
 import { Utils } from 'src/app/shared/utils/utils';
 
-import { RegistrationModule } from '../registration.module';
 
 import { FacilitySelectComponent } from './facility-select.component';
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { PassService } from 'src/app/services/pass.service';
 import { DateTime } from 'luxon';
+import { RegistrationComponent } from '../registration.component';
 
 describe('FacilitySelectComponent', () => {
   let component: FacilitySelectComponent;
@@ -18,7 +18,7 @@ describe('FacilitySelectComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [],
-      imports: [RegistrationModule,
+      imports: [RegistrationComponent,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: false })],
       providers: [ConfigService, PassService, HttpClient, HttpHandler, Utils, SwUpdate]
     }).compileComponents();

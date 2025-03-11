@@ -1,4 +1,4 @@
-@import "/src/assets/themes/default.scss";
+@use "/src/assets/themes/default.scss";
 
 .numberCircle {
     border-radius: 50%;
@@ -9,16 +9,16 @@
     border: 2px solid black;
     color: black;
     text-align: center;
-    background: $bg-default;
+    background: default.$bg-default;
     line-height: 1.8rem;
 }
 
 .visiting-container {
-    background: $bg-default;
+    background: default.$bg-default;
 }
 
 @media (max-width: 768px) {
     .header {
-        background: $bg-default;
+        background: default.$bg-default;
     }
 }

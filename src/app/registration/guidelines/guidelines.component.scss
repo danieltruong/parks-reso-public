@@ -1,7 +1,7 @@
-@import "/src/assets/themes/default.scss";
+@use "/src/assets/themes/default.scss";
 
 .header-container {
-    background: $bg-default;
+    background: default.$bg-default;
 }
 
 .camp-car {
@@ -10,7 +10,7 @@
 }
 
 .container-md {
-    background: $bg-default;
+    background: default.$bg-default;
 }
 
 .numberCircle {
@@ -23,5 +23,5 @@
     border: 2px solid black;
     color: black;
     text-align: center;
-    background: $bg-default;
+    background: default.$bg-default;
 }

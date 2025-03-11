@@ -13,11 +13,13 @@ describe('PassLookupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [PassLookupComponent],
-    imports: [RouterTestingModule,
+      declarations: [],
+      imports: [
+        PassLookupComponent,
+        RouterTestingModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: false })],
-    providers: [ConfigService, SwUpdate, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-}).compileComponents();
+      providers: [ConfigService, SwUpdate, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    }).compileComponents();
   });
 
   beforeEach(() => {

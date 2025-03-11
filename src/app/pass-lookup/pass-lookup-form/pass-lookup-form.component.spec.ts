@@ -9,10 +9,9 @@ describe('PassLookupFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ ReactiveFormsModule ],
-      declarations: [ PassLookupFormComponent ]
+      imports: [PassLookupFormComponent, ReactiveFormsModule],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

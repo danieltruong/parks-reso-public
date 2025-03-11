@@ -1,10 +1,12 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pass-lookup-form',
   templateUrl: './pass-lookup-form.component.html',
-  styleUrls: ['./pass-lookup-form.component.scss']
+  styleUrls: ['./pass-lookup-form.component.scss'],
+  imports: [ReactiveFormsModule],
+  standalone: true
 })
 export class PassLookupFormComponent implements OnInit {
   @Input() urlData: any;
@@ -33,17 +35,17 @@ export class PassLookupFormComponent implements OnInit {
     }
   }
 
-  disableForm(){
+  disableForm() {
     this.lookupForm.disable();
   }
 
-  enableForm(){
+  enableForm() {
     this.lookupForm.enable();
   }
 
   populateForm(data): void {
-    for (let key in data){
-      if (this.lookupForm.get(key)){
+    for (let key in data) {
+      if (this.lookupForm.get(key)) {
         this.lookupForm.controls[key].setValue(data[key]);
       }
     }

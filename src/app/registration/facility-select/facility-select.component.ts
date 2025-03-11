@@ -10,7 +10,8 @@ import { PassService } from 'src/app/services/pass.service';
 @Component({
   selector: 'app-facility-select',
   templateUrl: './facility-select.component.html',
-  styleUrls: ['./facility-select.component.scss']
+  styleUrls: ['./facility-select.component.scss'],
+  standalone: true
 })
 export class FacilitySelectComponent implements OnInit {
   @Input() facilities;
@@ -87,7 +88,7 @@ export class FacilitySelectComponent implements OnInit {
       this.defaultAMOpeningHour = this.configService.config['ADVANCE_BOOKING_HOUR'];
     }
     this.getSystemTime();
-    const today = this.getPSTDateTime(); 
+    const today = this.getPSTDateTime();
     this.initDate = {
       year: today.get('year'),
       month: today.get('month'),
@@ -124,7 +125,7 @@ export class FacilitySelectComponent implements OnInit {
     return bookingOpeningHour;
   }
 
-  get isOpeningHourPast(): boolean { 
+  get isOpeningHourPast(): boolean {
     if (this.systemTimePST != null) {
       return Boolean(parseInt(this.systemTimePST.get('hour'), 10) >= this.bookingOpeningHour);
     }
@@ -266,7 +267,7 @@ export class FacilitySelectComponent implements OnInit {
   async getSystemTime() {
     const facilityWithCurrentTime = this.facilities.find(facility => facility.currentTime);
     this.systemTime = facilityWithCurrentTime ? facilityWithCurrentTime.currentTime : null;
-    if (this.systemTime){
+    if (this.systemTime) {
       this.systemTimePST = this.convertUTCToPST(this.systemTime);
     }
   }

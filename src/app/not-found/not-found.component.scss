@@ -1,7 +1,7 @@
-@import "/src/assets/base/base.scss";
+@use '/src/assets/themes/default.scss';
 
 .not-found {
     height: 100%;
-    background-color: $bg-dark;
+    background-color: default.$bg-dark;
     color: white;
 }

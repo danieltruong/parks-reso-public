@@ -2,17 +2,14 @@
   'specialClosure': data?.status === 'closed' && data?.specialClosure === true, 
   'card-disabled': data?.status === 'closed' && !data?.specialClosure, 
   'card': data?.status === 'open' 
-}" 
-class="my-3">
+}" class="my-3">
 
   <div class="row flex-column flex-md-row">
 
 
     <div class="col-md-4 col-sm-12 order-md-3">
       <div class="fill">
-        <img
-          src="{{ url }}"
-          onerror="this.onerror=null;this.src='assets/images/image-not-found.svg';"
+        <img src="{{ url }}" onerror="this.onerror=null;this.src='assets/images/image-not-found.svg';"
           alt="{{ altText }}" />
       </div>
     </div>
@@ -29,20 +26,19 @@ class="my-3">
           <div class="closed-circle"></div>
           <strong class="text-override">Day-use pass not required</strong>
         </span>
-        <span *ngIf="data?.specialClosure === true && data?.status === 'closed'" class="text-danger d-flex align-items-center">
+        <span *ngIf="data?.specialClosure === true && data?.status === 'closed'"
+          class="text-danger d-flex align-items-center">
           <div class="closed-circle"></div>
           <strong class="text-override">Closed</strong>
         </span>
-        <span *ngIf="data?.specialClosure === true && data?.status === 'open'" class="text-danger d-flex align-items-center">
+        <span *ngIf="data?.specialClosure === true && data?.status === 'open'"
+          class="text-danger d-flex align-items-center">
           <div class="closed-circle"></div>
           <strong class="text-override">Closed</strong>
         </span>
       </div>
       <div *ngIf="data?.status === 'open'" class="mt-3">
-        <button
-          class="btn btn-primary booking-button"
-          type="button"
-          attr.aria-label="Book a pass for {{ data?.name }}"
+        <button class="btn btn-primary booking-button" type="button" attr.aria-label="Book a pass for {{ data?.name }}"
           (click)="navigate(data)">
           Book a Pass
         </button>
@@ -55,7 +51,7 @@ class="my-3">
       </span>
     </div>
 
-    
+
 
   </div>
 </div>

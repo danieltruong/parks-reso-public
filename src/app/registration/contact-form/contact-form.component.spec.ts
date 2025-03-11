@@ -4,18 +4,18 @@ import { ContactFormComponent } from './contact-form.component';
 import { ConfigService } from 'src/app/shared/services/config.service';
 import { UntypedFormBuilder } from '@angular/forms';
 import { fakeAsync } from '@angular/core/testing';
-import { RegistrationModule } from '../registration.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { RegistrationComponent } from '../registration.component';
 describe('ContactFormComponent', () => {
   let component: ContactFormComponent;
   let fixture: ComponentFixture<ContactFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [],
-    imports: [RegistrationModule],
-    providers: [ConfigService, UntypedFormBuilder, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-}).compileComponents();
+      declarations: [],
+      imports: [RegistrationComponent],
+      providers: [ConfigService, UntypedFormBuilder, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -54,20 +54,20 @@ describe('ContactFormComponent', () => {
     const enablePhoneCheckbox = component.myForm.get('enablePhone');
     const phoneFormControl = component.myForm.get('phone');
     const phoneInput = fixture.nativeElement.querySelector('#phone');
-  
+
     enablePhoneCheckbox.setValue(true);
     fixture.detectChanges();
-  
+
     const testPhoneNumber = '250-555-11111111115555';
     phoneInput.value = testPhoneNumber;
-  
+
     const keyEvent = new KeyboardEvent('keydown', {
       key: '1'
     });
-  
+
     phoneInput.dispatchEvent(keyEvent);
     fixture.detectChanges();
-  
+
     expect(phoneFormControl.hasError('invalidPhoneNumber')).toBeTruthy();
   }));
 });

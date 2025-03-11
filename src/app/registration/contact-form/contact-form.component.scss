@@ -1,7 +1,7 @@
-@import '/src/assets/themes/default.scss';
+@use '/src/assets/themes/default.scss';
 
 .error-message {
-  color: $error;
+  color: default.$error;
 }
 
 .left-col {
@@ -29,7 +29,7 @@
 }
 
 .details-container {
-  background-color: $bg-info;
+  background-color: default.$bg-info;
 }
 
 #raiseText i {

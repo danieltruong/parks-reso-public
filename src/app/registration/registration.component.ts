@@ -9,11 +9,14 @@ import { Constants } from '../shared/utils/constants';
 import { DateTime } from 'luxon';
 import { CanDeactivateType } from '../guards/navigation.guard';
 import { BehaviorSubject } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  styleUrls: ['./registration.component.scss'],
+  imports: [CommonModule],
+  standalone: true
 })
 export class RegistrationComponent implements OnInit {
   private alive = true;

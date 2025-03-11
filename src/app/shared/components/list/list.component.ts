@@ -1,11 +1,14 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { TableObject } from '../table-template/table-object';
 import { ITableMessage } from '../table-template/table-row-component';
+import { TableTemplateComponent } from '../table-template/table-template.component';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  imports: [TableTemplateComponent],
+  standalone: true
 })
 export class ListComponent implements OnChanges {
   @Input() tableRowComponent;

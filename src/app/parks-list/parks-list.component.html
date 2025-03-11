@@ -1,16 +1,22 @@
-<div *ngIf="loading"
-    class=" text-center">
+<div *ngIf="loading" class=" text-center">
     <span class="material-icons md-48 spinner rotating">
         autorenew
     </span>
 </div>
-<app-list *ngIf="!loading"
+<!-- Removing table template after Angular 19 upgrade -->
+<!-- <app-list *ngIf="!loading"
     [tableRowComponent]="tableRowComponent"
     [tableColumns]="tableColumns"
     [data]="data"
     [totalListItems]="totalListItems"
     [options]="options">
-</app-list>
+</app-list> -->
+<div *ngIf="!loading">
+    <div *ngFor="let park of data[0].rowData" class="col-12">
+        <app-card [data]="park">
+        </app-card>
+    </div>
+</div>
 
 <div *ngIf="totalListItems === 0 && !loading">
     <p>
@@ -20,7 +26,8 @@
         There are no day passes needed on provincial parks at this time.
     </p>
     <p *ngIf="error">
-        Please contact <a href="mailto:parkinfo@Victoria1.gov.bc.ca">parkinfo&#64;Victoria1.gov.bc.ca</a> if you continue to
+        Please contact <a href="mailto:parkinfo@Victoria1.gov.bc.ca">parkinfo&#64;Victoria1.gov.bc.ca</a> if you
+        continue to
         experience issues.
     </p>
 </div>

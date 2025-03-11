@@ -5,9 +5,10 @@ import { ToastService } from '../services/toast.service';
 import { Constants } from '../shared/utils/constants';
 
 @Component({
-  selector: 'app-pass-lookup',
-  templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss']
+    selector: 'app-pass-lookup',
+    templateUrl: './faq.component.html',
+    styleUrls: ['./faq.component.scss'],
+    standalone: true
 })
 export class FaqComponent implements OnInit {
 

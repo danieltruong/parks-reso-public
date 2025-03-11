@@ -1,4 +1,5 @@
-@import "/src/assets/themes/default.scss";
+@use "/src/assets/themes/default.scss";
+@use "@digitalspace/bcparks-bootstrap-theme/dist/scss/variables";
 
 html,
 body {
@@ -30,7 +31,7 @@ $header-height: 6.313rem;
 $footer-height: 13.75rem;
 
 .card-header {
-    background-color: $bg-dark;
+    background-color: default.$bg-dark;
     color: white;
     border-radius: 0.25rem !important;
     text-align: center;
@@ -45,7 +46,7 @@ $footer-height: 13.75rem;
 }
 
 .btn-primary {
-    background-color: $primary;
+    background-color: variables.$primary;
     font-weight: bold;
     padding-left: 4rem;
     padding-right: 4rem;
@@ -66,21 +67,21 @@ $footer-height: 13.75rem;
 .error-container {
     background-color: #f2dede;
     border: 1px solid #ebccd1;
-    color: $danger;
+    color: variables.$danger;
     border-radius: 4px;
 }
 
 .warning-container {
     background-color: #f9f1c6;
     border: 1px solid #faebcc;
-    color: $warning;
+    color: variables.$warning;
     border-radius: 4px;
 }
 
 .success-container {
     background-color: #dff0d8;
     border: 1px solid #d6e9c6;
-    color: $success;
+    color: variables.$success;
     border-radius: 4px;
 }
 
@@ -146,7 +147,7 @@ $footer-height: 13.75rem;
 
 .spinner {
     font-size: large;
-    color: $primary;
+    color: variables.$primary;
 }
 
 .form-group {
@@ -155,11 +156,11 @@ $footer-height: 13.75rem;
 
 .btn-link {
     text-decoration: none !important;
-    color: $primary !important;
+    color: variables.$primary !important;
 }
 
 .a {
-    color: $link-color;
+    color: variables.$link-color;
 }
 
 // Main Navigation
@@ -181,5 +182,5 @@ label {
 }
 
 .accordion-button {
-    color: $text-default !important;
+    color: default.$text-default !important;
 }

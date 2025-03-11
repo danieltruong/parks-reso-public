@@ -1,10 +1,10 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ConfigService } from 'src/app/shared/services/config.service';
-import { RegistrationModule } from '../registration.module';
 import { By } from '@angular/platform-browser';
 
 import { ParkDetailsComponent } from './park-details.component';
+import { RegistrationComponent } from '../registration.component';
 
 describe('ParkDetailsComponent', () => {
   let component: ParkDetailsComponent;
@@ -12,8 +12,8 @@ describe('ParkDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ParkDetailsComponent],
-      imports: [RegistrationModule],
+      declarations: [],
+      imports: [ParkDetailsComponent, RegistrationComponent],
       providers: [
         ConfigService,
         HttpClient,

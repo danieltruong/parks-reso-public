@@ -1,10 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GaribaldiConfirmationComponent } from './facilityConfirmation/garibaldi/garibaldiConfirmation.component';
+import { JoffreLakesComponent } from './facilityConfirmation/joffreLakes/joffreLakes.component';
+import { MountSeymourComponent } from './facilityConfirmation/mountSeymour/mountSeymour.component';
+import { RegistrationDetailsComponent } from '../registration-details/registration-details.component';
 
 @Component({
   selector: 'app-success',
   templateUrl: './success.component.html',
-  styleUrls: ['./success.component.scss']
+  styleUrls: ['./success.component.scss'],
+  imports: [GaribaldiConfirmationComponent, JoffreLakesComponent, MountSeymourComponent, RegistrationDetailsComponent],
+  standalone: true
 })
 export class SuccessComponent implements OnInit {
   @Input() regData;

@@ -1,28 +1,28 @@
-@import "@digitalspace/bcparks-bootstrap-theme/dist/scss/variables";
+@use "@digitalspace/bcparks-bootstrap-theme/dist/scss/variables";
 
-$bg-dark: $primary;
-$bg-info: $info;
+$bg-dark: variables.$primary;
+$bg-info: variables.$info;
 $bg-header-secondary: #d7dee8;
 $text-default: #494949;
-$error: $danger;
+$error: variables.$danger;
 
 // Background Colors
-$bg-default: $form-grey;
+$bg-default: variables.$form-grey;
 
 // Header
-$header-font-color: $light;
+$header-font-color: variables.$light;
 $header-bg: $bg-dark;
-$header-h1: $blue;
+$header-h1: variables.$blue;
 
 // Footer
 $footer-bg: $bg-dark;
-$footer-color: $light;
+$footer-color: variables.$light;
 $bg-dark-border-color: #5475a7;
 
 // Main navigation
-$mn-color: $light;
+$mn-color: variables.$light;
 $mn-border-color: #5f79a2;
 $mn-hover-bg: #2b4777;
-$mn-hover-color: $bcgold;
-$mn-toggle-color: $bcgold;
+$mn-hover-color: variables.$bcgold;
+$mn-toggle-color: variables.$bcgold;
 $mn-dropdown-bg: #2b4777;

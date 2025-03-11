@@ -2,7 +2,6 @@ import {
   Directive,
   ViewContainerRef,
   Input,
-  ComponentFactoryResolver,
   Output,
   EventEmitter,
   OnInit,
@@ -18,7 +17,8 @@ import { takeUntil } from 'rxjs/operators';
 import { InjectComponentService } from '../../services/inject-component.service';
 
 @Directive({
-  selector: '[libTableRow]'
+  selector: '[libTableRow]',
+  standalone: true
 })
 export class TableRowDirective implements OnInit, OnChanges, OnDestroy {
   @Input('libTableRow') rowObject: IRowObject;
@@ -31,7 +31,6 @@ export class TableRowDirective implements OnInit, OnChanges, OnDestroy {
 
   constructor(
     public viewContainerRef: ViewContainerRef,
-    public componentFactoryResolver: ComponentFactoryResolver,
     public injectComponentService: InjectComponentService
   ) { }
 

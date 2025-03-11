@@ -24,16 +24,16 @@ describe('CardComponent', () => {
     }
 
     await TestBed.configureTestingModule({
-    declarations: [CardComponent],
-    imports: [RouterTestingModule,
+      declarations: [],
+      imports: [CardComponent, RouterTestingModule,
         RouterTestingModule.withRoutes([{ path: 'registration', component: RegistrationComponent }])],
-    providers: [{
-            provide: ConfigService, useValue: mockConfigService
-        }, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-}).compileComponents();
+      providers: [{
+        provide: ConfigService, useValue: mockConfigService
+      }, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    }).compileComponents();
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
-    component.data = { "name": "Some Name", "sk": "SomeSK"};
+    component.data = { "name": "Some Name", "sk": "SomeSK" };
     location = TestBed.inject(Location);
   });
 
